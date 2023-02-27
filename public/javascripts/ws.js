@@ -17,13 +17,13 @@ form.addEventListener("submit", function (e) {
 	}
 });
 socket.addEventListener("message", async (e) => {
-	const text = await e.data.text();
-	addMessage(text);
+	// const text = await e.data.text();
+	console.log(e.data);
+	addMessage(e.data);
 });
 
 function addMessage(message) {
 	const li = document.createElement("li");
 	li.innerHTML = message;
 	messages.appendChild(li);
-	window.scrollTo(0, document.body.scrollHeight);
 }

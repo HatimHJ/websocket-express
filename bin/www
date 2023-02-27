@@ -41,7 +41,7 @@ wss.on("connection", (ws) => {
 		wss.clients.forEach(function each(client) {
 			if (client !== ws && client.readyState === WebSocket.OPEN) {
 				if (data.toString("utf-8") !== "") {
-					client.send(data);
+					client.send(data.toString("utf-8"));
 				}
 			}
 		});
